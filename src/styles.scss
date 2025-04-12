@@ -5,6 +5,10 @@ html {
   box-sizing: border-box;
 }
 
+.content, cdk-virtual-scroll-viewport {
+  height: 100%;
+}
+
 .movie-card-img-placeholder {
   aspect-ratio: 2/3;
   width: 100%;

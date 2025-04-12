@@ -7,7 +7,7 @@ import { MovieModel } from '../data/movie.model';
   selector: 'movie-card',
   imports: [UpperCasePipe],
   template: `
-    <div class="movie-card">
+    <div class="movie-card" (mouseenter)="enter()" (mouseleave)="leave()">
       <img
         class="movie-image"
         [alt]="movie().title"
@@ -24,9 +24,18 @@ import { MovieModel } from '../data/movie.model';
       <div></div>
     }
   `,
+  styles: [
+    `
+      :host {
+        display: block;
+      }
+    `,
+  ],
 })
 export class MovieCardComponent {
   movie = input.required<MovieModel>();
+
+  aLargeObject = new Array(100000).fill('some-string');
 
   image = computed(
     () => `https://image.tmdb.org/t/p/w342${this.movie().poster_path}`,
@@ -35,4 +44,8 @@ export class MovieCardComponent {
   work = input(250);
 
   workItems = computed(() => new Array(this.work()).fill(null));
+
+  enter() {}
+
+  leave() {}
 }

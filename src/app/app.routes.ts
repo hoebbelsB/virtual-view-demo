@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
 import { BlankComponent } from './pages/blank.component';
+import { CssVirtualScrollComponent } from './pages/css-virtual-scroll.component';
 import { InitialComponent } from './pages/initial.component';
+import { VirtualScrollComponent } from './pages/virtual-scroll.component';
 import { VirtualViewComponent } from './pages/virtual-view.component';
 
 export const routes: Routes = [
@@ -14,11 +16,11 @@ export const routes: Routes = [
   },
   {
     path: 'virtual-scroll',
-    component: BlankComponent,
+    component: VirtualScrollComponent,
   },
   {
     path: 'css',
-    component: BlankComponent,
+    component: CssVirtualScrollComponent,
   },
   {
     path: 'virtual-view',
